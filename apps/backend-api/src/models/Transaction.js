@@ -1,2 +1,0 @@
-// Transaction model
-module.exports = {};

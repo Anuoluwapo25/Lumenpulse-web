@@ -1,2 +1,0 @@
-// Encryption utilities
-module.exports = {};
