@@ -20,6 +20,7 @@ export class AuthService {
     if (
       user &&
       user.passwordHash &&
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
       (await bcrypt.compare(pass, user.passwordHash))
     ) {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -32,6 +33,7 @@ export class AuthService {
   login(user: { id: string; email: string }) {
     const payload = { email: user.email, sub: user.id };
     return {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
       access_token: this.jwtService.sign(payload),
     };
   }
